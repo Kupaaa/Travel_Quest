@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+:root {
+  --primaryColor: hsl(207, 70%, 50%); /* Pacific Blue */
+  --secondaryColor: hsl(197, 70%, 60%); /* Sky Blue */
+  --gradiantColor: linear-gradient(to right, hsl(207, 70%, 50%), hsl(197, 70%, 60%)); /* Pacific Blue to Sky Blue Gradient */
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(210, 20%, 20%); /* Deep Ocean Blue */
+  --textColor: hsl(210, 15%, 30%); /* Slate Gray */
+  --whiteColorDeam: hsl(0, 0%, 94%); /* Off-White */
+  --greyText: hsl(210, 10%, 60%); /* Cloud Gray */
+  --inputColor: hsl(200, 25%, 97%); /* Light Sky Blue */
+  --bodyColor: hsl(195, 100%, 95%); /* Pale Sky Blue */
+  --cardBg: hsl(200, 60%, 98%); /* Soft Ocean Blue */
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--whiteColorDeam);
+  width: 100%;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
+}
+header .logo {
+  color: var(--blackColor);
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+header .logo .icon {
+  font-size: 25px;
+  color: var(--primaryColor);
+  transform: translateY(5px);
+}
+@media screen and (max-width: 768px) {
+  header .navBar {
+    position: absolute;
+    background: var(--whiteColorDeam);
+    height: -moz-max-content;
+    height: max-content;
+    width: 80%;
+    border-radius: 1rem;
+    top: -500rem;
+    left: 50%;
+    padding: 1rem;
+    transform: translate(-50%);
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    transition: 0.5s ease-in-out;
+  }
+  header .navBar .navLists {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 0.5rem 0;
+  }
+  header .navBar .navLists .navItem {
+    padding: 0.5rem 0;
+  }
+  header .navBar .navLists .navItem .navLink {
+    color: var(--textColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  header .navBar .navLists .navItem .navLink :hover {
+    color: var(--primaryColor);
+  }
+  header .navBar .navLists .btn {
+    margin-top: 1rem;
+  }
+  header .navBar .navLists .btn a {
+    font-weight: 600;
+    color: var(--whiteColor);
+  }
+  header .navBar .closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--primaryColor);
+  }
+  header .navBar .closeNavbar:hover {
+    color: var(--secondaryColor);
+  }
+  header .activeNavbar {
+    top: 7rem;
+  }
+}
+header .toggleNavbar .icon {
+  font-size: 25px;
+  color: var(--primaryColor);
+}
+header .toggleNavbar:hover.icon {
+  color: var(--secondaryColor);
+}
+
+@media screen and (min-width: 768px) {
+  .toggleNavbar, .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  .header .navBar .navLists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .header .navBar .navLists .navItem .navLink {
+    color: var(--textColor);
+    padding: 0 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .header .navBar .navLists .navItem .navLink:hover {
+    color: var(--primaryColor);
+  }
+  .header .navBar .navLists .btn {
+    margin-left: 1rem;
+  }
+  .header .navBar .navLists .btn a {
+    color: var(--whiteColor);
+    font-weight: 500;
+  }
+}
+@media screen and (min-width: 960px) {
+  .header .navBar .navLists .navItem {
+    padding: 0 0.7rem;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .header {
+    padding: 1rem 8.5rem;
+  }
+}/*# sourceMappingURL=navbar.css.map */

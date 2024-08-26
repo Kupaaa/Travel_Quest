@@ -1,0 +1,185 @@
+:root {
+  --primaryColor: hsl(207, 70%, 50%); /* Pacific Blue */
+  --secondaryColor: hsl(197, 70%, 60%); /* Sky Blue */
+  --gradiantColor: linear-gradient(to right, hsl(207, 70%, 50%), hsl(197, 70%, 60%)); /* Pacific Blue to Sky Blue Gradient */
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(210, 20%, 20%); /* Deep Ocean Blue */
+  --textColor: hsl(210, 15%, 30%); /* Slate Gray */
+  --whiteColorDeam: hsl(0, 0%, 94%); /* Off-White */
+  --greyText: hsl(210, 10%, 60%); /* Cloud Gray */
+  --inputColor: hsl(200, 25%, 97%); /* Light Sky Blue */
+  --bodyColor: hsl(195, 100%, 95%); /* Pale Sky Blue */
+  --cardBg: hsl(200, 60%, 98%); /* Soft Ocean Blue */
+}
+
+
+
+
+
+
+
+.main {
+  width: 100%;
+
+  .secTitle {
+    .title {
+      position: relative;
+      width: max-content;
+      color: var(--textColor);
+      margin: 1rem 0;
+      z-index: 2;
+
+      &:after {
+        background: var(--secondaryColor);
+        bottom: 5px;
+        content: "";
+        height: 5px;
+        position: absolute;
+        right: 0;
+        width: 120px;
+        z-index: 1;
+      }
+    }
+  }
+
+  .secContent {
+    justify-content: center;
+    gap: 1.1rem;
+
+    .singleDestination {
+      height: 100%;
+      display: grid;
+      row-gap: 10px;
+      border-radius: 10px;
+      align-items: center;
+      background: var(--cardBg);
+      box-shadow: 0 2px 4px rgba(140, 140, 141, .549);
+      overflow: hidden;
+
+      &:hover {
+        background: var(--cardHover);
+        box-shadow: 1 4px 4px rgba(85, 85, 114, .549);
+        transition: .3s ease;
+      }
+
+      .imageDiv {
+        img {
+          -o-object-fit: cover;
+          height: 100%;
+             object-fit: cover;
+          transition: .3s ease;
+          width: 100%;
+        }
+
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .cardInfo {
+        padding: 1rem;
+
+        .destTitle {
+          color: var(--blackColor);
+          font-size: 1.25rem;
+        }
+
+        .continent {
+          gap: .5rem;
+
+          .icon {
+            color: var(--textColor);
+            font-size: 18px;
+          }
+
+          .name {
+            color: var(--textColor);
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+
+        .fees {
+          width: 100%;
+          justify-content: space-between;
+          padding: 1rem;
+          margin: 1rem 0;
+          border-top: 1.5px solid var(--greyText);
+          border-bottom: 1.5px solid var(--greyText);
+
+          .grade {
+            color: var(--textColor);
+            max-width: 100px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            small {
+              background: var(--gradiantColor);
+              border-radius: 1rem;
+              color: var(--whiteColor);
+              font-size: 10px;
+              padding: 1px 10px;
+              text-align: center;
+            }
+          }
+
+          .price {
+            color: var(--blackColor);
+            font-size: 2rem;
+          }
+        }
+
+        .desc {
+          color: var(--textColor);
+          font-size: 12.5px;
+          font-weight: 500;
+        }
+
+        .btn {
+          margin-top: 1rem;
+          color: var(--whiteColor);
+          font-weight: 600;
+          justify-content: space-between;
+          gap: .5rem;
+
+          .icon {
+            align-self: center;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .title {
+    font-size: 1.5rem;
+
+    &:after {
+      width: 155px !important;
+    }
+  }
+
+  .secContent {
+    grid-template-columns: repeat(2, 1fr);
+
+    .singleDestination {
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .secContent {
+    grid-template-columns: repeat(3, 1fr);
+
+    .singleDestination {
+      height: auto;
+    }
+  }
+}
